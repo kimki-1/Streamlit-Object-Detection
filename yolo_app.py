@@ -94,8 +94,7 @@ def run_yolo() :
     image_files_list = st.file_uploader('Uploader Image', type=['png', 'jpg', 'jpeg', 'JPG'], accept_multiple_files= True)
     img_list = []
     if image_files_list is not None :
-        # 2. 각 파일을 이미지로 바꿔줘야 한다.
-        # 2-1.모든 파일이 img_list에 이미지로 저장됨
+        
         for img_files in image_files_list :
             img = load_image(img_files)
             img_array = np.array(img)
@@ -106,8 +105,7 @@ def run_yolo() :
             yolo = YOLO(0.6, 0.5)
             all_classes = get_classes('yolo/data/coco_classes.txt')
 
-            # image = cv2.imread('data/images/image1.jpg')
-            # image = cv2.cvtColor(image, cv2.COLOR_RGB2BGR)
+            
             for i in np.arange(len(img_list)) :
                 result_image = detect_image(img_list[i], yolo, all_classes)
-                # st.image(result_image)
+                
