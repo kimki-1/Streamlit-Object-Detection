@@ -38,6 +38,7 @@ def run_segmentation() :
     cv_enet_model = cv2.dnn.readNet('data/enet-cityscapes/enet-model.net')
     label_values = open('data/enet-cityscapes/enet-classes.txt').read().split('\n')
     CV_ENET_SHAPE_IMG_COLORS = open('data/enet-cityscapes/enet-colors.txt').read().split('\n')
+    CV_ENET_SHAPE_IMG_COLORS = np.array([  np.array(color.split(',')).astype('int') for color in CV_ENET_SHAPE_IMG_COLORS ])
     
     image_files_list = st.file_uploader('Uploader Image', type=['png', 'jpg', 'jpeg', 'JPG'], accept_multiple_files= True)
     img_list = []   
@@ -58,9 +59,9 @@ def run_segmentation() :
 
                 classes_num, h, w = cv_enet_model_output.shape[IMG_OUTPUT_SHAPE_START : IMG_OUTPUT_SHAPE_END]
                 class_map = np.argmax(cv_enet_model_output[0], axis=0)
-
-                CV_ENET_SHAPE_IMG_COLORS = np.array([  np.array(color.split(',')).astype('int') for color in CV_ENET_SHAPE_IMG_COLORS ])
+                
                 mask_class_map = CV_ENET_SHAPE_IMG_COLORS[class_map]
+                
                 mask_class_map = cv2.resize(mask_class_map, (sample_img.shape[1], sample_img.shape[0]), interpolation= cv2.INTER_NEAREST)
                 class_map = cv2.resize(class_map, (sample_img.shape[1], sample_img.shape[0]), interpolation=cv2.INTER_NEAREST)
                 cv_enet_model_output = ( ( 0.4 * sample_img ) + (0.6 * mask_class_map) ).astype('uint8')
