@@ -9,13 +9,12 @@ import zipfile
 import cv2 
 import os 
 import pathlib 
-import time 
+import time
 
 from PIL import Image, ImageFilter, ImageEnhance
 from collections import defaultdict
 from io import StringIO
 from matplotlib import pyplot as plt
-from PIL import Image
 
 from object_detection.utils import ops as utils_ops
 from object_detection.utils import label_map_util
