@@ -33,16 +33,16 @@ def main():
             st.write('')
             st.image('data/images/SSD.PNG')
             st.write('↑ Detection하기위한 여러 feature map')
-            st.markdown('#### ● 2015년에 나온 YOLO v1 모델의 단점을 보완한 SSD 모델의 feature map을 확인 할 수 있다. ')
+            st.markdown('#### ● 2015년에 나온 YOLO v1 모델의 단점을 보완한 SSD 모델의 feature map을 확인 할 수 있습니다. ')
             st.markdown('***')
             st.markdown('## <NMS>')
             st.write('')
             st.image('data/images/SSD2.PNG')
-            st.markdown('#### ● 위와 같이 요약을 할 수 있는데 이렇게 되면 각각의 ouput feature map 에서 뽑은 anchor boxes 때문에 최종단계에서 한 객체에 대한 많은 bounding boexs가 생성이 된다.')
+            st.markdown('#### ● 위와 같이 요약을 할 수 있는데 이렇게 되면 각각의 ouput feature map 에서 뽑은 anchor boxes 때문에 최종단계에서 한 객체에 대한 많은 bounding boexs가 생성이 됩니다.')
             st.markdown('## ')
             st.image('data/images/SSD3.PNG')
             st.image('data/images/SSD1.PNG')
-            st.markdown('#### ● 그래서 많은 anchor boxes중 NMS를 적용하여 가장 높은 class confidence score를 갖는 anchor box를 선택하게 된다.')
+            st.markdown('#### ● 그래서 많은 anchor boxes중 NMS를 적용하여 가장 높은 class confidence score를 갖는 anchor box를 선택하게 됩니다.')
         
         if side_radio == 'YOLO' :
             st.markdown('## <YOLO : You Only Look Once >')
@@ -60,7 +60,7 @@ def main():
 
         if side_radio == 'Semantic Segmentation' :
             st.markdown('## <Semantic Segmentation>')
-            st.markdown('#### Semantic Segmentation이란, 이미지를 픽셉려로 분류하는 것입니다')
+            st.markdown('#### Semantic Segmentation이란, 이미지를 픽섹별로 분류하는 것입니다')
             st.image('data/images/segmentation1.PNG')
             st.markdown('***')
             st.markdown('## <자율주행 자동차에서의 Semantic Segmentation>')
