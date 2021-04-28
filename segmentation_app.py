@@ -50,7 +50,7 @@ def run_segmentation() :
             img_list.append(img_array)
             st.image(img)
          
-        if st.button('Detection') :
+        if st.button('Segmentation') :
             for i in np.arange(len(img_list)) :
                 sample_img = img_list[i]
                 blob_img = cv2.dnn.blobFromImage(sample_img, normalize_image, resize_image, 0, swapRB = True, crop= False)
