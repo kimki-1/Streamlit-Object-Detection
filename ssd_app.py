@@ -24,8 +24,8 @@ utils_ops.tf = tf.compat.v1
 # Patch the location of gfile
 tf.gfile = tf.io.gfile
 
-# PATH_TO_LABELS = 'C:\\Users\\admin\\Documents\\Tensorflow\\models\\research\\object_detection\\data\\mscoco_label_map.pbtxt'
-PATH_TO_LABELS = 'C:\\Users\\5-18\\Documents\\Tensorflow\\models\\research\\object_detection\\data\\mscoco_label_map.pbtxt'
+PATH_TO_LABELS = 'C:\\Users\\admin\\Documents\\Tensorflow\\models\\research\\object_detection\\data\\mscoco_label_map.pbtxt'
+# PATH_TO_LABELS = 'C:\\Users\\5-18\\Documents\\Tensorflow\\models\\research\\object_detection\\data\\mscoco_label_map.pbtxt'
 category_index = label_map_util.create_category_index_from_labelmap(PATH_TO_LABELS)
 
 def load_image(image_file) :
