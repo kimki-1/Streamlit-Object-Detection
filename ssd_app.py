@@ -106,24 +106,36 @@ def show_inference(model, image_np):
     st.image(image_np)
 
 def run_ssd() : 
-    
-    image_files_list = st.file_uploader('Uploader Image', type=['png', 'jpg', 'jpeg', 'JPG'], accept_multiple_files= True)
-    img_list = []
-    if image_files_list is not None :
-        
-        for img_files in image_files_list :
-            img = load_image(img_files)
-            img_array = np.array(img)
-            img_list.append(img_array)
-            st.image(img)
+    st.title('SSD Detection')
+    side_radio = st.sidebar.radio('Detection Select',['Image Detection', 'Video Detection'])
 
-        if st.button('Detection') :
-
-            model_name = 'ssd_mobilenet_v1_coco_2017_11_17'
-            detection_model = load_model(model_name)
+    if side_radio =='Image Detection' :
+        st.markdown('## <Image Detection>')
+        st.video('data/videos/SSD Image.mp4')
+        st.markdown('#### ※ AWS EC2 프리티어를 사용하기 때문에 SSD모델을 실행시키기 어려워서 로컬에서 SSD모델을 실행 시키는 영상(전체화면 권장)')
+        # image_files_list = st.file_uploader('Uploader Image', type=['png', 'jpg', 'jpeg', 'JPG'], accept_multiple_files= True)
+        # img_list = []
+        # if image_files_list is not None :
             
-            for i in np.arange(len(img_list)) :
-                show_inference(detection_model, img_list[i])
+        #     for img_files in image_files_list :
+        #         img = load_image(img_files)
+        #         img_array = np.array(img)
+        #         img_list.append(img_array)
+        #         st.image(img)
+
+        #     if st.button('Detection') :
+
+        #         model_name = 'ssd_mobilenet_v1_coco_2017_11_17'
+        #         detection_model = load_model(model_name)
+                
+        #         for i in np.arange(len(img_list)) :
+        #             show_inference(detection_model, img_list[i])
+        
+    if side_radio == 'Video Detection' :
+        st.markdown('## <Video Detection>')
+        st.video('data/videos/SSD.mp4')
+        st.video('data/videos/SSD2.mp4')
+        st.video('data/videos/SSD3.mp4')
             
 
 

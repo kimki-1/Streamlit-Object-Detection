@@ -73,12 +73,3 @@ def run_segmentation() :
                 cv2.putText(my_legend, class_name, (5, (i*25)+17), cv2.FONT_HERSHEY_SIMPLEX, 0.5, (0, 255, 255), 2 )
                 cv2.rectangle(my_legend, (100, (i*25)), (300, (i*25) + 25), tuple(color_info), -1 )
             st.image(my_legend)
-                
-
-
-
-
-            
-        
-
-

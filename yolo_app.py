@@ -91,21 +91,33 @@ def save_uploaded_file(directory, img) :
     return st.success('Saved file : {} in {}'.format( filename+'.jpg', directory ))
 
 def run_yolo() :
-    image_files_list = st.file_uploader('Uploader Image', type=['png', 'jpg', 'jpeg', 'JPG'], accept_multiple_files= True)
-    img_list = []
-    if image_files_list is not None :
-        
-        for img_files in image_files_list :
-            img = load_image(img_files)
-            img_array = np.array(img)
-            img_list.append(img_array)
-            st.image(img)
+    st.title('YOLO Detection')
+    side_radio = st.sidebar.radio('Detection Select',['Image Detection', 'Video Detection'])
 
-        if st.button('Detection') :
-            yolo = YOLO(0.6, 0.5)
-            all_classes = get_classes('yolo/data/coco_classes.txt')
+    if side_radio =='Image Detection' :
+        st.markdown('## <Image Detection>')
+        st.video('data/videos/YOLO image.mp4')
+        st.markdown('#### ※ AWS EC2 프리티어를 사용하기 때문에 YOLO모델을 실행시키기 어려워서 로컬에서 YOLO모델을 실행 시키는 영상(전체화면 권장)')
 
+        # image_files_list = st.file_uploader('Uploader Image', type=['png', 'jpg', 'jpeg', 'JPG'], accept_multiple_files= True)
+        # img_list = []
+        # if image_files_list is not None :
             
-            for i in np.arange(len(img_list)) :
-                result_image = detect_image(img_list[i], yolo, all_classes)
+        #     for img_files in image_files_list :
+        #         img = load_image(img_files)
+        #         img_array = np.array(img)
+        #         img_list.append(img_array)
+        #         st.image(img)
+
+        #     if st.button('Detection') :
+        #         yolo = YOLO(0.6, 0.5)
+        #         all_classes = get_classes('yolo/data/coco_classes.txt')
+
                 
+        #         for i in np.arange(len(img_list)) :
+        #             result_image = detect_image(img_list[i], yolo, all_classes)
+                
+    if side_radio == 'Video Detection' :
+        st.video('data/videos/YOLO.mp4')
+        st.video('data/videos/YOLO2.mp4')
+        
