@@ -111,8 +111,15 @@ def run_ssd() :
 
     if side_radio =='Image Detection' :
         st.markdown('## <Image Detection>')
-        st.video('data/videos/SSD Image.mp4')
         st.markdown('#### ※ AWS EC2 프리티어를 사용하기 때문에 SSD모델을 실행시키기 어려워서 로컬에서 SSD모델을 실행 시키는 영상(전체화면 권장)')
+        st.write('')
+        st.video('data/videos/SSD_image.mp4')
+        
+        st.markdown('***')
+        st.markdown('## <Streamlit localhost에서 실행>')
+        st.video('data/videos/SSD_image1.mp4')
+
+        # st.video('data/videos/SSD_image2.mp4')
         # image_files_list = st.file_uploader('Uploader Image', type=['png', 'jpg', 'jpeg', 'JPG'], accept_multiple_files= True)
         # img_list = []
         # if image_files_list is not None :
@@ -133,8 +140,25 @@ def run_ssd() :
         
     if side_radio == 'Video Detection' :
         st.markdown('## <Video Detection>')
+        st.video('data/videos/SSD2_play.mp4')
+        st.markdown('### ※ 로컬에서 실행되는 Video Detection실행 영상')
+        st.markdown('***')
+        st.markdown('## <Detection Videos>')
+        st.write('[원본영상]')
+        st.video('data/videos/SSD_ori.mp4')
+        st.write('[Detection 영상]')
         st.video('data/videos/SSD.mp4')
+        st.markdown('***')
+
+        st.write('[원본영상]')
+        st.video('data/videos/SSD2_ori.mp4')
+        st.write('[Detection 영상]')
         st.video('data/videos/SSD2.mp4')
+        st.markdown('***')
+
+        st.write('[원본영상]')
+        st.video('data/videos/SSD3_ori.mp4')
+        st.write('[Detection 영상]')
         st.video('data/videos/SSD3.mp4')
             
 

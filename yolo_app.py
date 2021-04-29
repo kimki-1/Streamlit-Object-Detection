@@ -96,8 +96,12 @@ def run_yolo() :
 
     if side_radio =='Image Detection' :
         st.markdown('## <Image Detection>')
-        st.video('data/videos/YOLO image.mp4')
         st.markdown('#### ※ AWS EC2 프리티어를 사용하기 때문에 YOLO모델을 실행시키기 어려워서 로컬에서 YOLO모델을 실행 시키는 영상(전체화면 권장)')
+        st.write('')
+        st.video('data/videos/YOLO image.mp4')
+        st.markdown('***')
+        
+        
 
         # image_files_list = st.file_uploader('Uploader Image', type=['png', 'jpg', 'jpeg', 'JPG'], accept_multiple_files= True)
         # img_list = []
