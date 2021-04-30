@@ -120,9 +120,9 @@ def run_ssd() :
         st.video('data/videos/SSD_image1.mp4')
         st.markdown('***')
         st.markdown('## <Detection Image Result>')
-        st.image('data/images/ssd_img_ret.png')
-        st.image('data/images/ssd_img_ret2.png')
-        st.image('data/images/ssd_img_ret3.png')
+        st.image('data/images/ssd_img_ret.jpg')
+        st.image('data/images/ssd_img_ret2.jpg')
+        st.image('data/images/ssd_img_ret3.jpg')
         # st.video('data/videos/SSD_image2.mp4')
         # image_files_list = st.file_uploader('Uploader Image', type=['png', 'jpg', 'jpeg', 'JPG'], accept_multiple_files= True)
         # img_list = []

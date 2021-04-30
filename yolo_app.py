@@ -101,9 +101,9 @@ def run_yolo() :
         st.video('data/videos/YOLO image.mp4')
         st.markdown('***')
         st.markdown('## <Detection Image Result>')
-        st.image('data/images/yolo_ret.png')
-        st.image('data/images/yolo_ret2.png')
-        st.image('data/images/yolo_ret3.png')
+        st.image('data/images/yolo_ret.jpg')
+        st.image('data/images/yolo_ret2.jpg')
+        st.image('data/images/yolo_ret3.jpg')
 
         # image_files_list = st.file_uploader('Uploader Image', type=['png', 'jpg', 'jpeg', 'JPG'], accept_multiple_files= True)
         # img_list = []

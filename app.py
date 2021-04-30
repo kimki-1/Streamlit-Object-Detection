@@ -85,13 +85,13 @@ def main():
             st.write('원본이미지에서 엣지 검출을 보다 좋게 하기위해 Gray Scale, Smoothing(GaussinBlur)을 합니다')
             st.write('')
             st.markdown('***')
-            st.image('data/images/lane_img4.png')
+            st.image('data/images/lane_img4.jpg')
             st.write('위의 이미지와 Canny Edge Detection의 이미지를 bitwise_and(비트와이즈)을 해서 아래의 이미지를 만듭니다.')
-            st.image('data/images/lane_img3.png')
+            st.image('data/images/lane_img3.jpg')
             st.write('효율적인 Lane Detection을 위해 필요한 부분만 남겨둔것 입니다.')
             st.write('')
             st.markdown('***')
-            st.image('data/images/lane_img5.png')
+            st.image('data/images/lane_img5.jpg')
             st.write('위의 선들을 허브변환을 이용하여 이어줍니다.')
 
     if side_bar == 'SSD' :
