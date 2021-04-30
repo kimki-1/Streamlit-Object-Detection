@@ -137,12 +137,6 @@ def run_yolo() :
         st.markdown('***')
 
         st.write('[원본영상]')
-        st.video('data/videos/SSD2_ori.mp4')
-        st.write('[Detection 영상]')
-        st.video('data/videos/YOLO3.mp4')
-        st.markdown('***')
-
-        st.write('[원본영상]')
         st.video('data/videos/SSD3_ori.mp4')
         st.write('[Detection 영상]')
         st.video('data/videos/YOLO2.mp4')

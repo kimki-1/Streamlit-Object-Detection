@@ -155,12 +155,6 @@ def run_ssd() :
         st.markdown('***')
 
         st.write('[원본영상]')
-        st.video('data/videos/SSD2_ori.mp4')
-        st.write('[Detection 영상]')
-        st.video('data/videos/SSD2.mp4')
-        st.markdown('***')
-
-        st.write('[원본영상]')
         st.video('data/videos/SSD3_ori.mp4')
         st.write('[Detection 영상]')
         st.video('data/videos/SSD3.mp4')
