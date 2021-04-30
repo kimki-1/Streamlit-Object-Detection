@@ -80,7 +80,7 @@ def main():
             st.write('위의 이미지로 Lane Detection')
             st.write('')
             st.markdown('***')
-            st.image('data/images/lane_img2.png')
+            st.image('data/images/lane_img2.jpg')
             st.write('OpenCV에서 제공하는 Canny Edge Detection을 사용하여 위의 이미지를 만들어 냅니다.')
             st.write('원본이미지에서 엣지 검출을 보다 좋게 하기위해 Gray Scale, Smoothing(GaussinBlur)을 합니다')
             st.write('')
