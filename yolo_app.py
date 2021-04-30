@@ -100,8 +100,10 @@ def run_yolo() :
         st.write('')
         st.video('data/videos/YOLO image.mp4')
         st.markdown('***')
-        
-        
+        st.markdown('## <Detection Image Result>')
+        st.image('data/images/yolo_ret.png')
+        st.image('data/images/yolo_ret2.png')
+        st.image('data/images/yolo_ret3.png')
 
         # image_files_list = st.file_uploader('Uploader Image', type=['png', 'jpg', 'jpeg', 'JPG'], accept_multiple_files= True)
         # img_list = []
@@ -122,6 +124,25 @@ def run_yolo() :
         #             result_image = detect_image(img_list[i], yolo, all_classes)
                 
     if side_radio == 'Video Detection' :
+        st.markdown('## <Video Detection>')
+        st.markdown('#### ※ AWS EC2 프리티어를 사용하기 때문에 YOLO모델을 실행시키기 어려워서 로컬에서 YOLO모델을 실행 시키는 영상(전체화면 권장)')
+        st.write('')
+        st.video('data/videos/yolo_video.mp4')
+        st.markdown('***')
+
+        st.write('[원본영상]')
+        st.video('data/videos/SSD_ori.mp4')
+        st.write('[Detection 영상]')
         st.video('data/videos/YOLO.mp4')
+        st.markdown('***')
+
+        st.write('[원본영상]')
+        st.video('data/videos/SSD2_ori.mp4')
+        st.write('[Detection 영상]')
+        st.video('data/videos/YOLO3.mp4')
+        st.markdown('***')
+
+        st.write('[원본영상]')
+        st.video('data/videos/SSD3_ori.mp4')
+        st.write('[Detection 영상]')
         st.video('data/videos/YOLO2.mp4')
-        
