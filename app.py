@@ -2,20 +2,22 @@ import streamlit as st
 from ssd_app import run_ssd
 from yolo_app import run_yolo
 from segmentation_app import run_segmentation
+from lane_app import run_lane
 
 def main():
 
     
-    side_bar =  st.sidebar.selectbox('Menu',['Home','SSD', 'YOLO', 'Semantic Segmentation'])
+    side_bar =  st.sidebar.selectbox('Menu',['Home','SSD', 'YOLO', 'Semantic Segmentation','Lane Detection'])
     
     if side_bar == 'Home' :
         st.title('자율주행 자동차 Object Detection 프로젝트')
         st.write('')
-        side_radio = st.sidebar.radio('Introduction',['Object Detection', 'SSD', 'YOLO', 'Semantic Segmentation'])
+        side_radio = st.sidebar.radio('Introduction',['Object Detection', 'SSD', 'YOLO', 'Semantic Segmentation','Lane Detection'])
         
         if side_radio == 'Object Detection' :
             st.markdown('## <Object Detection>')
             st.write('')
+            st.write('[Object Detection 예제 영상]')
             st.video('data/videos/Object Detection.mp4')
             st.markdown('***')
             st.markdown('## <Object Detection 모델소개>')
@@ -71,9 +73,26 @@ def main():
             st.markdown('## <Semantic Segmentation VS Instance Segmentation>')
             st.image('data/images/segmentation.PNG')
             st.markdown('#### ● Object Detection과 Semantic Segmentation 그리고 Instance Segmentation의 차이를 보여주는 예시입니다.')
-            
-
-
+        
+        if side_radio == 'Lane Detection' :
+            st.markdown('## <Lane Detection>')
+            st.image('data/images/lane_img.jpg')
+            st.write('위의 이미지로 Lane Detection')
+            st.write('')
+            st.markdown('***')
+            st.image('data/images/lane_img2.png')
+            st.write('OpenCV에서 제공하는 Canny Edge Detection을 사용하여 위의 이미지를 만들어 냅니다.')
+            st.write('원본이미지에서 엣지 검출을 보다 좋게 하기위해 Gray Scale, Smoothing(GaussinBlur)을 합니다')
+            st.write('')
+            st.markdown('***')
+            st.image('data/images/lane_img4.png')
+            st.write('위의 이미지와 Canny Edge Detection의 이미지를 bitwise_and(비트와이즈)을 해서 아래의 이미지를 만듭니다.')
+            st.image('data/images/lane_img3.png')
+            st.write('효율적인 Lane Detection을 위해 필요한 부분만 남겨둔것 입니다.')
+            st.write('')
+            st.markdown('***')
+            st.image('data/images/lane_img5.png')
+            st.write('위의 선들을 허브변환을 이용하여 이어줍니다.')
 
     if side_bar == 'SSD' :
         run_ssd()
@@ -83,6 +102,9 @@ def main():
 
     if side_bar == 'Semantic Segmentation' :
         run_segmentation()
+    
+    if side_bar == 'Lane Detection' :
+        run_lane()
 
 if __name__ == '__main__' :
     main()

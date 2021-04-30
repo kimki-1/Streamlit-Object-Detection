@@ -118,7 +118,11 @@ def run_ssd() :
         st.markdown('***')
         st.markdown('## <Streamlit localhost에서 실행>')
         st.video('data/videos/SSD_image1.mp4')
-
+        st.markdown('***')
+        st.markdown('## <Detection Image Result>')
+        st.image('data/images/ssd_img_ret.png')
+        st.image('data/images/ssd_img_ret2.png')
+        st.image('data/images/ssd_img_ret3.png')
         # st.video('data/videos/SSD_image2.mp4')
         # image_files_list = st.file_uploader('Uploader Image', type=['png', 'jpg', 'jpeg', 'JPG'], accept_multiple_files= True)
         # img_list = []
@@ -143,7 +147,7 @@ def run_ssd() :
         st.video('data/videos/SSD2_play.mp4')
         st.markdown('### ※ 로컬에서 실행되는 Video Detection실행 영상')
         st.markdown('***')
-        st.markdown('## <Detection Videos>')
+        st.markdown('## <Detection Videos Result>')
         st.write('[원본영상]')
         st.video('data/videos/SSD_ori.mp4')
         st.write('[Detection 영상]')
